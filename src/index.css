@@ -282,18 +282,6 @@ header{
     width: 80%;
 }
 
-/*Import styles*/
-@font-face {
-    font-family: 'Qanelas Soft Bold';
-    src: url("src/assets/fonts/QanelasSoftDEMO-ExtraBold.otf");
-}
-
-@font-face {
-    font-family: 'Qanelas Soft Light';
-    src: url("src/assets/fonts/QanelasSoftDEMO-UltraLight.otf");
-}
-/*end*/
-
 /*MEDIA*/
 @media (max-width: 1575px){
     .main-input{
