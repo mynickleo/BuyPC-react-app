@@ -17,13 +17,6 @@ const passwordHTML = document.getElementById("password")
 const buttonLogin = document.getElementById("buttonLogin")
 const modalLogin = document.querySelector(".modal")
 
-function openModal(){
-    modalLogin.style.display = "block"
-}
-function closeModal(){
-    modalLogin.style.display = "none"
-}
-
 const Router = ()=>{
 
     const {user, setUser} = useContext(AuthContext);
@@ -39,17 +32,20 @@ const Router = ()=>{
 
         //по красоте использовать axios на сервер. Но сервера нет :D
         //поэтому будем изголяться внутренней базой
+        let found = false;
         accounts.map((account) =>{
             if(account.login == user_.login && account.password == user_.password){
-                localStorage.setItem('user', JSON.stringify(user_))
-                setUser({name: user_.login})
-                buttonLogin.textContent = "Выйти"
-                showModal_LogIN()
-            }
-            else{
-                showModal_Error()
+                found = true
             }
         })
+        if(found){
+            localStorage.setItem('user', JSON.stringify(user_))
+            setUser({name: user_.login})
+            buttonLogin.textContent = "Выйти"
+            showModal_LogIN()
+        }
+        else
+            showModal_Error()
     }
 
     const loginOut = () =>{
