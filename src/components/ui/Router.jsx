@@ -17,6 +17,13 @@ const passwordHTML = document.getElementById("password")
 const buttonLogin = document.getElementById("buttonLogin")
 const modalLogin = document.querySelector(".modal")
 
+function openModal(){
+    modalLogin.style.display = "block"
+}
+function closeModal(){
+    modalLogin.style.display = "none"
+}
+
 const Router = ()=>{
 
     const {user, setUser} = useContext(AuthContext);
